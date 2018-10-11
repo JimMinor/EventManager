@@ -476,17 +476,16 @@ public class GestoreQueryCerca {
         selectSql = "SELECT * FROM VIEWADDETTI ";
         //{1,2,3}
         if (!nome.equals("") && !cognome.equals("") && !(datanascita == null)) {
-            queryWhere = " WHERE NOME LIKE '%"+nome+"%' AND COGNOME=? AND DATA_NASCITA=?";
+            queryWhere = " WHERE NOME LIKE ? AND COGNOME LIKE ? AND DATA_NASCITA LIKE ?";
             preparedStatement = connection.prepareStatement(selectSql + queryWhere);
             preparedStatement.setString(1, nome);
             preparedStatement.setString(2, cognome);
             preparedStatement.setDate(3, Date.valueOf(datanascita));
             resultSet = preparedStatement.executeQuery();
-            //{1,2}
-
-        } else if (!nome.equals("") && !cognome.equals("") && (datanascita == null)) {
-            queryWhere = " WHERE NOME LIKE '%"+nome+"%' AND COGNOME=? ";
-            System.out.println(queryWhere);
+        }
+        //{1,2}
+        else if (!nome.equals("") && !cognome.equals("") && (datanascita == null)) {
+            queryWhere = " WHERE NOME LIKE ? AND COGNOME LIKE ? ";
             preparedStatement = connection.prepareStatement(selectSql + queryWhere);
             preparedStatement.setString(1, nome);
             preparedStatement.setString(2, cognome);
@@ -494,7 +493,7 @@ public class GestoreQueryCerca {
         }
         //{1,3}
         else if (!nome.equals("") && cognome.equals("") && !(datanascita == null)) {
-            queryWhere = " WHERE NOME LIKE '%"+nome+"%' AND DATA_NASCITA=?";
+            queryWhere = " WHERE NOME LIKE ? AND DATA_NASCITA LIKE ?";
 
             preparedStatement = connection.prepareStatement(selectSql + queryWhere);
             preparedStatement.setString(1, nome);
@@ -503,7 +502,7 @@ public class GestoreQueryCerca {
         }
         //{2,3}
         else if (nome.equals("") && !cognome.equals("") && !(datanascita == null)) {
-            queryWhere = " WHERE COGNOME LIKE '%"+nome+"%' AND DATA_NASCITA=?";
+            queryWhere = " WHERE COGNOME LIKE ? AND DATA_NASCITA LIKE ?";
 
             preparedStatement = connection.prepareStatement(selectSql + queryWhere);
             preparedStatement.setString(1, cognome);
@@ -512,7 +511,7 @@ public class GestoreQueryCerca {
         }
         //{1}
         else if (!nome.equals("") && cognome.equals("") && (datanascita == null)) {
-            queryWhere = " WHERE NOME LIKE '%"+nome+"%' ";
+            queryWhere = " WHERE NOME LIKE ? ";
 
             preparedStatement = connection.prepareStatement(selectSql + queryWhere);
             preparedStatement.setString(1, nome);
@@ -520,16 +519,16 @@ public class GestoreQueryCerca {
         }
         //{2}
         else if (nome.equals("") && !cognome.equals("") && (datanascita == null)) {
-            queryWhere = " WHERE COGNOME='" + cognome + "'";
+            queryWhere = " WHERE COGNOME LIKE ?";
 
             preparedStatement = connection.prepareStatement(selectSql + queryWhere);
-
+            preparedStatement.setString(1, cognome);
             resultSet = preparedStatement.executeQuery();
         }
         //{3}
         else if (nome.equals("") && cognome.equals("") && !(datanascita == null)) {
 
-            queryWhere = " WHERE  DATA_NASCITA=?";
+            queryWhere = " WHERE  DATA_NASCITA LIKE ?";
 
             preparedStatement = connection.prepareStatement(selectSql + queryWhere);
             preparedStatement.setDate(1, Date.valueOf(datanascita));

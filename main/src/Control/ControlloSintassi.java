@@ -35,7 +35,7 @@ public class ControlloSintassi {
     }
 
     public static boolean controllaSintassiIban(String iban) {
-        Pattern p = Pattern.compile("^[A-Z]{2}[0-9]*");
+        Pattern p = Pattern.compile("^[A-Z]{2}[0-9]{2}[A-Z][0-9]*");
 
         Matcher m = p.matcher(iban);
 

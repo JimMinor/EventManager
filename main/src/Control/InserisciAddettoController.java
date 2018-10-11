@@ -33,6 +33,7 @@ public class InserisciAddettoController {
         setListenerTelefonoTextField();
         setListenerStipendioTextField();
         setListenerCFTextField();
+        setListenerIbanTextField();
         setListenerAnnullaButton();
         setListenerInserisciButton();
     }
@@ -44,6 +45,8 @@ public class InserisciAddettoController {
                     public void run() {
                         try {
                             controllaDatiAddetto();
+                            MostraAlert.mostraAlertImpiegatoInserito();
+                            menuPrincipaleController.mostraFormAddetti();
                         } catch ( Exception e ) {
                             e.printStackTrace();
                             MostraAlert.mostraAlertErroreInserimentoDati(e.getMessage());
@@ -103,6 +106,17 @@ public class InserisciAddettoController {
         });
     }
 
+    private void setListenerIbanTextField() {
+        inserisciAddettoView.getIbanAddettoTextField().textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    inserisciAddettoView.getIbanAddettoTextField().setText(newValue.toUpperCase());
+                }
+            }
+        });
+    }
 
     private boolean controllaDatiAddetto() throws NoValidEventDataException, Exception {
 
