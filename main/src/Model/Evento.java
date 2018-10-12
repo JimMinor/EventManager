@@ -32,7 +32,7 @@ public  class Evento implements Comparable<Evento> {
 
     public Evento(LuogoEnum luogoEvento, String descrizione,
                   Float prezzoBiglietto, TipologiaEnum tipologiaEvento,
-                  String nome, LocalDate dataEvento, String genereEvento, Set<String> partecipantiEvento) {
+                  String nome, LocalDate dataEvento, String genereEvento, Set<String> partecipantiEvento,Integer bigliettiVenduti) {
 
         idEvento=0;// Viene gestito nel DB
         this.luogoEvento = luogoEvento;
@@ -45,7 +45,7 @@ public  class Evento implements Comparable<Evento> {
         this.dataEvento = dataEvento;
         this.genereEvento=genereEvento;
         this.partecipantiEvento=partecipantiEvento;
-        bigliettiVenduti = 0;
+        this.bigliettiVenduti=bigliettiVenduti;
 
     }
 

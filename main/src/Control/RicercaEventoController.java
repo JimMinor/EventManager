@@ -146,12 +146,16 @@ public class RicercaEventoController {
 
        Evento eventoSelezionato =  visualizzaEventiModel.getEventoSelezionato();
         try {
+
             if(eventoSelezionato!=null) {
+                if(eventoSelezionato.getBigliettiVenduti()==0) {
+                    eventoDAO.eliminaEvento(eventoSelezionato);
+                    visualizzaEventiModel.setEventoSelezionato(eventoSelezionato);
+                    visualizzaEventiModel.setListaEventiView(((EventoDAOImp) eventoDAO).cercaEvento());
+                }else {
+                    MostraAlert.mostraAlertErroreInserimentoDati("Sono stati venduti biglietti per l'evento");
 
-                eventoDAO.eliminaEvento(eventoSelezionato);
-                visualizzaEventiModel.setEventoSelezionato(eventoSelezionato);
-                visualizzaEventiModel.setListaEventiView(((EventoDAOImp) eventoDAO).cercaEvento());
-
+                }
 
             }
         } catch (Exception e) {
