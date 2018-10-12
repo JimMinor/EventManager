@@ -26,6 +26,10 @@ public class testGestoreQueryCerca {
         assertNull(gestoreQueryCerca);
     }
 
+    /** 
+       Primo caso:
+       Username e password inseriti e presente nel DB
+     */
     @Test public void testeseguiQueryRicercaImpiegatoConnesso1() {
         Impiegato testAdmin = new Impiegato("admin","admin","V",43);
         Impiegato testResult = null;
@@ -37,7 +41,10 @@ public class testGestoreQueryCerca {
 
         assertEquals(testAdmin,testResult);
     }
-
+    /** 
+       Secondo caso:
+       Username || password non inseriti 
+     */
     @Test public void testeseguiQueryImpiegatoConnesso2() {
         Impiegato testResult = null;
         try {
@@ -46,7 +53,11 @@ public class testGestoreQueryCerca {
 
         assertNull(testResult);
     }
-
+    
+    /** 
+        Terzo caso:
+        Username e passwordo inseriti ma non presenti nel DB
+     */
     @Test public void testeeseguiQueryImpiegatoConnesso3() {
 
         Impiegato testResult = null;
