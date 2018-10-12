@@ -25,7 +25,7 @@ public class ImpiegatoDAOImp implements ImpiegatoDAO {
 
     @Override public boolean inserisciImpiegato() throws SQLException {
 
-        if (impiegatoDaInserire.getAmministratore() == "Amministratore")
+       /** if (impiegatoDaInserire.getAmministratore() == "Amministratore")
             mansioneDaInserire = 'V';
         else if (impiegatoDaInserire.getAmministratore() == "Operatore")
             mansioneDaInserire = 'X';
@@ -50,6 +50,8 @@ public class ImpiegatoDAOImp implements ImpiegatoDAO {
                 "'" + mansioneDaInserire + "')");
         connection.close();
         return true;
+        */
+       return false;
     }
 
     @Override public Collection<Impiegato> cercaImpiegato(String nome, String cognome, LocalDate dataNascita) {

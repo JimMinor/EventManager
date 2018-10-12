@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.chart.PieChart?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
@@ -20,5 +21,6 @@
       <JFXTextField fx:id="spesaTotaleClienteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="251.0" layoutY="96.0" promptText="Spesa Totale" unFocusColor="#3eb3da" />
       <JFXTextField fx:id="passwordClienteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="41.0" layoutY="234.0" promptText="Password" text="*********" unFocusColor="#3eb3da" />
       <JFXDatePicker fx:id="dataNascitaClienteDataPicker" defaultColor="#3eb3da" layoutX="250.0" layoutY="234.0" overLay="true" promptText="Data Nascita" />
+      <PieChart fx:id="pieChart" layoutX="457.0" layoutY="23.0" prefHeight="249.0" prefWidth="343.0" />
     </children>
 </AnchorPane>

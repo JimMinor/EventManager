@@ -46,8 +46,12 @@ public class RicercaClienteController {
                 Cliente cliente = (Cliente)cercaClientiView.getTabellaCercaClientiTableView()
                         .getSelectionModel().getSelectedItem();
                 if(cliente!=null) {
-                    visualizzaclientiModel.setClienteSelezionato(cliente);
-                    menuPrincipaleController.visualizzaPaneClienti(visualizzaclientiModel);
+                    try {
+                        visualizzaclientiModel.deleteObserver(cercaClientiView);
+                        visualizzaclientiModel.setClienteSelezionato(cliente);
+                        visualizzaclientiModel.setMapTipologiaBiglietti(clientiDAO.cercaBigliettiPerTipologia(cliente));
+                        menuPrincipaleController.visualizzaPaneClienti(visualizzaclientiModel);
+                    } catch ( Exception e ) { e.printStackTrace(); }
                 }
             }
         }));

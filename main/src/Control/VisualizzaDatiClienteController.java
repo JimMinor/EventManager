@@ -1,5 +1,7 @@
 package Control;
 
+import DB.ClienteDAOImp;
+import DB.ClientiDAO;
 import Model.Cliente;
 import Model.VisualizzaClientiModel;
 import View.VisualizzaDatiClientiView;
@@ -11,18 +13,24 @@ public class VisualizzaDatiClienteController {
     private VisualizzaDatiClientiView visualizzaDatiClientiView;
     private VisualizzaClientiModel visualizzaClientiModel;
     private MenuPrincipaleController menuPrincipaleController;
+    private ClientiDAO clienteDAO = new ClienteDAOImp();
 
     public VisualizzaDatiClienteController(VisualizzaDatiClientiView visualizzaDatiClientiView, VisualizzaClientiModel visualizzaClientiModel, MenuPrincipaleController menuPrincipaleController) {
         this.visualizzaDatiClientiView = visualizzaDatiClientiView;
         this.visualizzaClientiModel = visualizzaClientiModel;
         this.menuPrincipaleController = menuPrincipaleController;
-        this.visualizzaClientiModel.setClienteSelezionato(visualizzaClientiModel.getClienteSelezionato());//forzo l'update della vista
+        this.visualizzaClientiModel.setClienteSelezionato(visualizzaClientiModel.getClienteSelezionato());
+        this.visualizzaClientiModel.setMapTipologiaBiglietti(visualizzaClientiModel.getMapTipologiaBiglietti());//forzo l'update della vista
         setListenerVisualizzaCliente();
         setAttributiCliente();
     }
 
     private void setAttributiCliente() {
+
+
         Cliente clienteDaVisualizzare = visualizzaClientiModel.getClienteSelezionato();
+        visualizzaClientiModel.setClienteSelezionato(clienteDaVisualizzare);
+
         visualizzaDatiClientiView.getUsernameClienteTextField().setText(clienteDaVisualizzare.getUsername());
         visualizzaDatiClientiView.getUsernameClienteTextField().setEditable(false);
         visualizzaDatiClientiView.getNomeClienteTextField().setText(clienteDaVisualizzare.getNome());
@@ -41,8 +49,7 @@ public class VisualizzaDatiClienteController {
         visualizzaDatiClientiView.getBigliettiAcquistatiTextField().setEditable(false);
         visualizzaDatiClientiView.getDataNascitaClienteDataPicker().setValue(clienteDaVisualizzare.getDataNascita());
         visualizzaDatiClientiView.getDataNascitaClienteDataPicker().setEditable(false);
-        visualizzaDatiClientiView.getPasswordClienteTextField().setText(clienteDaVisualizzare.getPassword());
-        visualizzaDatiClientiView.getPasswordClienteTextField().setEditable(false);
+
     }
 
     private void setListenerVisualizzaCliente(){

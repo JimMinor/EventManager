@@ -6,9 +6,11 @@ import Model.VisualizzaClientiModel;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.control.RadioButton;
@@ -16,9 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
-import java.util.Observable;
-import java.util.Observer;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class VisualizzaDatiClientiView implements Observer {
 
@@ -33,6 +33,7 @@ public class VisualizzaDatiClientiView implements Observer {
     @FXML private JFXTextField spesaTotaleClienteTextField;
     @FXML private JFXTextField passwordClienteTextField;
     @FXML private JFXDatePicker dataNascitaClienteDataPicker;
+    @FXML private PieChart pieChart;
     //--------FIELDS--------------
 
     private VisualizzaClientiModel visualizzaClientiModel;
@@ -91,19 +92,17 @@ public class VisualizzaDatiClientiView implements Observer {
         return visualizzaClientiModel;
     }
 
-    public void setAttributiCliente() {
-
-
-    }
-
-
     public JFXButton getIndietroClientiButton() {
         return indietroClientiButton;
     }
 
-    @Override
-    public void update(Observable o, Object arg) {
-        Cliente clienteDaVisualizzare = (Cliente) arg;
-        setAttributiCliente();
+    @Override public void update(Observable o, Object arg) {
+        Map<String,Integer> mapPieChart = (Map<String,Integer>)arg;
+        List<PieChart.Data> list = new ArrayList<>();
+        Set<String> set = mapPieChart.keySet();
+        for( String s : set )
+            list.add(new PieChart.Data(s,mapPieChart.get(s)));
+        pieChart.setData(FXCollections.observableArrayList(list));
+
     }
 }

@@ -33,7 +33,7 @@ public class mainApp extends Application {
         i.setAmministratore("Amministratore");
         i.setUsername("JimMinor");
         // TEST - END
-        cambiaStagePrincipale.mostraStageMenuPrincipale(i);
+        cambiaStagePrincipale.mostraStageLogin();
         stagePrincipale.show();
     }
 

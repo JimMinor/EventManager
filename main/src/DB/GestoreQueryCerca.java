@@ -59,101 +59,6 @@ public class GestoreQueryCerca {
 
     }
 
-    public List<Impiegato> eseguiQueryRicercaImpiegato(String nome, String cognome, LocalDate datanascita) throws SQLException {
-        List<Impiegato> listaImpiegato = new ArrayList<>();
-        ResultSet resultSet = null;
-        String selectsql1 = null;
-        String queryWhere = null;
-
-
-        Connection connection = UtilityDB.getConnessioneDB();
-        PreparedStatement preparedStatement = null;
-        String selectSql = "SELECT * FROM IMPIEGATO NATURAL JOIN PERSONA";
-        //{1,2,3}
-        if (!nome.equals("") && !cognome.equals("") && !(datanascita == null)) {
-            queryWhere = " WHERE NOME LIKE '%?%' AND COGNOME=? AND DATA_NASCITA=?";
-            preparedStatement = connection.prepareStatement(selectSql + queryWhere);
-            preparedStatement.setString(1, nome);
-            preparedStatement.setString(2, cognome);
-            preparedStatement.setDate(3, Date.valueOf(datanascita));
-            resultSet = preparedStatement.executeQuery();
-            //{1,2}
-
-        } else if (!nome.equals("") && !cognome.equals("") && (datanascita == null)) {
-            queryWhere = " WHERE NOME LIKE '%?%' AND COGNOME=? ";
-            preparedStatement = connection.prepareStatement(selectSql + queryWhere);
-            preparedStatement.setString(1, nome);
-            preparedStatement.setString(2, cognome);
-            resultSet = preparedStatement.executeQuery();
-        }
-        //{1,3}
-        else if (!nome.equals("") && cognome.equals("") && !(datanascita == null)) {
-            queryWhere = " WHERE NOME LIKE '%?%' AND DATA_NASCITA=?";
-            preparedStatement = connection.prepareStatement(selectSql + queryWhere);
-            preparedStatement.setString(1, nome);
-            preparedStatement.setDate(2, Date.valueOf(datanascita));
-            resultSet = preparedStatement.executeQuery();
-        }
-        //{2,3}
-        else if (nome.equals("") && !cognome.equals("") && !(datanascita == null)) {
-            queryWhere = " WHERE COGNOME LIKE '%?%' AND DATA_NASCITA=?";
-            preparedStatement = connection.prepareStatement(selectSql + queryWhere);
-            preparedStatement.setString(1, cognome);
-            preparedStatement.setDate(2, Date.valueOf(datanascita));
-            resultSet = preparedStatement.executeQuery();
-        }
-        //{1}
-        else if (!nome.equals("") && cognome.equals("") && (datanascita == null)) {
-            queryWhere = " WHERE NOME LIKE '%?%' ";
-            preparedStatement = connection.prepareStatement(selectSql + queryWhere);
-            preparedStatement.setString(1, nome);
-            resultSet = preparedStatement.executeQuery();
-        }
-        //{2}
-        else if (nome.equals("") && !cognome.equals("") && (datanascita == null)) {
-            queryWhere = "WHERE COGNOME LIKE '%?%' ";
-            preparedStatement = connection.prepareStatement(selectSql + queryWhere);
-            preparedStatement.setString(1, cognome);
-            resultSet = preparedStatement.executeQuery();
-        }
-        //{3}
-        else if (nome.equals("") && cognome.equals("") && !(datanascita == null)) {
-            queryWhere = " WHERE  DATA_NASCITA=?";
-            preparedStatement = connection.prepareStatement(selectSql + queryWhere);
-            preparedStatement.setDate(1, Date.valueOf(datanascita));
-            resultSet = preparedStatement.executeQuery();
-        } else {
-            preparedStatement = connection.prepareStatement(selectSql);
-            resultSet = preparedStatement.executeQuery();
-        }
-
-        while (resultSet.next()) {
-            String nome1 = (resultSet.getString("NOME"));
-            String cognome1 = (resultSet.getString("COGNOME"));
-            LocalDate dataNascita = (resultSet.getDate("DATA_NASCITA").toLocalDate());
-            String CF = (resultSet.getString("CODICE_FISCALE"));
-            String username = (resultSet.getString("USERNAME"));
-            String password = (resultSet.getString("PASSWORD"));
-            LocalDate dataAssunzione = (resultSet.getDate("DATA_ASSUNZIONE").toLocalDate());
-            Float stipendio = (resultSet.getFloat("STIPENDIO"));
-            String amministratore = (resultSet.getString("ADMIN"));
-            String telefono = (resultSet.getString("TELEFONO"));
-            String iban = (resultSet.getString("IBAN"));
-            String email = (resultSet.getString("EMAIL"));
-            int id = (resultSet.getInt("ID"));
-
-
-            Impiegato rigaImpiegato = new Impiegato(nome1, cognome1, dataNascita, CF, username,
-                    password, dataAssunzione, stipendio, amministratore, telefono, iban, email, id);
-            listaImpiegato.add(rigaImpiegato);
-        }
-        resultSet.close();
-        preparedStatement.close();
-        connection.close();
-        return listaImpiegato;
-
-
-    }
 
     public List<Cliente> eseguiQueryRicercaClienti() throws SQLException{
         List<Cliente> listaClienti = new ArrayList<>();
@@ -388,36 +293,26 @@ public class GestoreQueryCerca {
         return listaEventi;
     }
 
-    public Impiegato eseguiQueryRicercaImpiegatoConnesso(String username, String password) throws SQLException {
+    public Impiegato eseguiQueryRicercaImpiegatoConnesso(String username, String password) throws SQLException{
 
+        if( username == null || password == null || username.equals("") || password.equals("")) return null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
-        String query = " SELECT * FROM IMPIEGATO JOIN PERSONA WHERE USERNAME = ? AND PASSWORD = ? ";
+        String query = " SELECT * FROM IMPIEGATO WHERE USERNAME = ? AND PASSWORD = ? ";
 
         preparedStatement = UtilityDB.getConnessioneDB().prepareStatement(query);
+        preparedStatement.setString(1,username);
+        preparedStatement.setString(2,password);
         resultSet = preparedStatement.executeQuery();
         Impiegato imp = null;
-        while (resultSet.next()) {
 
-            String nome1 = (resultSet.getString("NOME"));
-            String cognome1 = (resultSet.getString("COGNOME"));
-            LocalDate dataNascita = (resultSet.getDate("DATA_NASCITA").toLocalDate());
-            String CF = (resultSet.getString("CODICE_FISCALE"));
-            String usernameI = (resultSet.getString("USERNAME"));
-            String passwordI = (resultSet.getString("PASSWORD"));
-            LocalDate dataAssunzione = (resultSet.getDate("DATA_ASSUNZIONE").toLocalDate());
-            Float stipendio = (resultSet.getFloat("STIPENDIO"));
-            String amministratore = (resultSet.getString("ADMIN"));
-            String telefono = (resultSet.getString("TELEFONO"));
-            String iban = (resultSet.getString("IBAN"));
-            String email = (resultSet.getString("EMAIL"));
-            int id = (resultSet.getInt("ID"));
+        resultSet.next();
+        String usernameI = (resultSet.getString("USERNAME"));
+        String passwordI = (resultSet.getString("PASSWORD"));
+        String amministratore = (resultSet.getString("ADMIN"));
+        int id = (resultSet.getInt("ID"));
+        imp = new Impiegato(usernameI,passwordI,amministratore,id);
 
-
-            imp = new Impiegato(nome1, cognome1, dataNascita, CF, usernameI,
-                    passwordI, dataAssunzione, stipendio, amministratore, telefono, iban, email, id);
-
-        }
         return imp;
 
     }
@@ -566,6 +461,27 @@ public class GestoreQueryCerca {
         return listaAddetto;
 
 
+    }
+
+    public Map<String,Integer> eseguiQueryRicercaBigliettiPerTipologia(Cliente c ) {
+
+        Map<String,Integer> map = new HashMap<>();
+        Connection connection = UtilityDB.getConnessioneDB();
+        PreparedStatement preparedStatement = null;
+        ResultSet  resultSet = null;
+        String query = " SELECT TIPOLOGIA, COUNT(TIPOLOGIA) FROM EVENTO E JOIN BIGLIETTI_VENDUTI B ON E.ID = B.IDEVENTO WHERE B.IDCLIENTI = ? GROUP BY TIPOLOGIA ";
+        try {
+
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1,c.getId());
+            resultSet = preparedStatement.executeQuery();
+
+            while(resultSet.next())
+                map.put(resultSet.getString("TIPOLOGIA"),resultSet.getInt("COUNT(TIPOLOGIA)"));
+
+        } catch ( Exception e ) { e.printStackTrace(); }
+
+    return map;
     }
 
 }
