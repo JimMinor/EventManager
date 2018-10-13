@@ -25,7 +25,7 @@ public class MostraAlert {
 
     public static void mostraAlertErroreInserimentoDati(String messagge) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Dati Errati");
+        alert.setTitle("Errore");
         alert.setHeaderText(null);
         alert.setContentText(messagge);
         alert.showAndWait();
