@@ -114,9 +114,10 @@ public class GestoreQueryCerca {
             TipologiaEnum tipologia = (TipologiaEnum.valueOf(resultSet.getString("TIPOLOGIA")));
             String genere = (resultSet.getString("GENERE"));
             int id = (resultSet.getInt("ID"));
+            int biglietti = (resultSet.getInt("BIGLIETTI_VENDUTI"));
             Set<String> partecipantiEvento = new HashSet<>();
             partecipantiEvento = eseguiQueryRicercaPartecipantiEvento(id);
-            Evento rigaEvento = new Evento(luogoEvento, descrizione, prezzo, tipologia, nome, date, genere, partecipantiEvento);
+            Evento rigaEvento = new Evento(luogoEvento, descrizione, prezzo, tipologia, nome, date, genere, partecipantiEvento,biglietti);
             rigaEvento.setIdEvento(id);
             listaEventi.add(rigaEvento);
         }
@@ -158,7 +159,7 @@ public class GestoreQueryCerca {
             int biglietti = (resultSet.getInt("BIGLIETTI_VENDUTI"));
             Set<String> partecipantiEvento = new HashSet<>();
             partecipantiEvento = eseguiQueryRicercaPartecipantiEvento(id);
-            evento = new Evento(luogoEvento, descrizione, prezzo, tipologia, nome, date, genere, partecipantiEvento);
+            evento = new Evento(luogoEvento, descrizione, prezzo, tipologia, nome, date, genere, partecipantiEvento,biglietti);
             evento.setIdEvento(id);
             evento.setBigliettiVenduti(biglietti);
 
@@ -179,7 +180,7 @@ public class GestoreQueryCerca {
         preparedStatement.setInt(1,id);
         ResultSet resultSet = preparedStatement.executeQuery();
 
-        if (!resultSet.isBeforeFirst()) throw new SQLException();
+       // if (!resultSet.isBeforeFirst()) throw new SQLException();
 
         while (resultSet.next()) setPartecipanti.add(resultSet.getString(1));
 
@@ -283,9 +284,10 @@ public class GestoreQueryCerca {
             TipologiaEnum tipologia = (TipologiaEnum.valueOf(resultSet.getString("TIPOLOGIA")));
             String genere = (resultSet.getString("GENERE"));
             int id = (resultSet.getInt("ID"));
+            int nbiglietti=(resultSet.getInt("BIGLIETTI_VENDUTI"));
             Set<String> partecipantiEvento = new HashSet<>();
             partecipantiEvento = eseguiQueryRicercaPartecipantiEvento(id);
-            Evento rigaEvento = new Evento(luogoEnum, descrizione, prezzo, tipologia, nome, date, genere, partecipantiEvento);
+            Evento rigaEvento = new Evento(luogoEnum, descrizione, prezzo, tipologia, nome, date, genere, partecipantiEvento,nbiglietti);
             rigaEvento.setIdEvento(id);
             listaEventi.add(rigaEvento);
         }

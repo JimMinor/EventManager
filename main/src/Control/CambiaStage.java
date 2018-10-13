@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import Main.mainApp;
+import javafx.scene.image.Image;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,6 +23,7 @@ public class CambiaStage {
         screens=new HashMap<>();
         screens.put("menuPrincipale","../FXMLView/menuPrincipaleScreen.fxml");
         screens.put("login","../FXMLView/loginScreen.fxml");
+
         this.myApp = myApp;
     }
 
@@ -41,7 +43,8 @@ public class CambiaStage {
             Scene scene = new Scene(root);
             if (scene != null) {
                 myApp.getStagePrincipale().setResizable(false);
-                myApp.getStagePrincipale().setTitle("Schermata Login");
+                myApp.getStagePrincipale().setTitle("Login");
+                myApp.getStagePrincipale().getIcons().add(new Image(getClass().getResourceAsStream("../icons/icons8-ticket-64.png")));
                 setScene(scene);
             } else throw new Exception(); //necessaria?
         } catch (Exception e) {
@@ -60,7 +63,8 @@ public class CambiaStage {
 
             if (scene != null) {
                 myApp.getStagePrincipale().setResizable(false);
-                myApp.getStagePrincipale().setTitle("Event Management");
+                myApp.getStagePrincipale().setTitle("Menu Principale");
+                myApp.getStagePrincipale().getIcons().add(new Image(getClass().getResourceAsStream("../icons/icons8-ticket-64.png")));
                 setScene(scene);
             } else throw new Exception(); //necessaria?
         } catch (Exception e) {

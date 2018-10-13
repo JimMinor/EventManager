@@ -100,7 +100,7 @@ public class testGestoreQueryCerca {
         Set<String> partecipanti = new HashSet<String>();
         partecipanti.add("Calcutta");
         Evento testEvento = new Evento(LuogoEnum.PALAPARTENOPE,null,Float.valueOf(23.32f),TipologiaEnum.MUSICALE,"Calcutta Concerto Di",LocalDate.of(2019,01,26),
-                GenereMusicaleEnum.POP.name(),partecipanti);
+                GenereMusicaleEnum.POP.name(),partecipanti,0);
         testEvento.setIdEvento(224);
 
         Set<String> testPartecipanti = new HashSet<>();
@@ -117,7 +117,7 @@ public class testGestoreQueryCerca {
         Set<String> partecipanti = new HashSet<String>();
         partecipanti.add("Calcutta");
         Evento testEvento = new Evento(LuogoEnum.PALAPARTENOPE,null,Float.valueOf(23.32f),TipologiaEnum.MUSICALE,"Calcutta Concerto Di",LocalDate.of(2019,01,26),
-                GenereMusicaleEnum.POP.name(),partecipanti);
+                GenereMusicaleEnum.POP.name(),partecipanti,0);
         testEvento.setIdEvento(224);
 
         Set<String> testPartecipanti = new HashSet<>();
@@ -134,7 +134,7 @@ public class testGestoreQueryCerca {
         Set<String> partecipanti = new HashSet<String>();
         partecipanti.add("Calcutta");
         Evento testEvento = new Evento(LuogoEnum.PALAPARTENOPE,null,Float.valueOf(23.32f),TipologiaEnum.MUSICALE,"Calcutta Concerto Di",LocalDate.of(2019,01,26),
-                GenereMusicaleEnum.POP.name(),partecipanti);
+                GenereMusicaleEnum.POP.name(),partecipanti,0);
         testEvento.setIdEvento(224);
 
         Set<String> testPartecipanti = new HashSet<>();
