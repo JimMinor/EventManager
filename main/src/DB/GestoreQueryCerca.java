@@ -59,7 +59,6 @@ public class GestoreQueryCerca {
 
     }
 
-
     public List<Cliente> eseguiQueryRicercaClienti() throws SQLException{
         List<Cliente> listaClienti = new ArrayList<>();
         ResultSet resultSet = null;
@@ -130,6 +129,9 @@ public class GestoreQueryCerca {
 
     public Evento eseguiQueryRicercaEventiId(int idEvento) throws SQLException {
 
+
+        if ( idEvento <= 0) return null;
+
         String sql = " SELECT * FROM EVENTO WHERE ID = ? ";
         ResultSet resultSet = null;
         PreparedStatement preparedStatement = null;
@@ -142,7 +144,7 @@ public class GestoreQueryCerca {
         preparedStatement.setInt(1,idEvento);
         resultSet = preparedStatement.executeQuery();
 
-        while (resultSet.next()) {
+        resultSet.next();
 
             LuogoEnum luogoEvento = (LuogoEnum.valueOf(resultSet.getString("LUOGO")));
             LocalDate date = (resultSet.getDate("DATA").toLocalDate());
@@ -161,15 +163,14 @@ public class GestoreQueryCerca {
             evento.setBigliettiVenduti(biglietti);
 
 
-        }
-
         resultSet.close();
         preparedStatement.close();
         connection.close();
         return evento;
     }
 
-    private Set<String> eseguiQueryRicercaPartecipantiEvento(int id) throws SQLException {
+    public Set<String> eseguiQueryRicercaPartecipantiEvento(int id) throws SQLException {
+
 
         Set<String> setPartecipanti = new HashSet<>();
         String query = " SELECT PARTECIPANTE FROM PARTECIPANTI_EVENTO WHERE ID_EVENTO = ? ";
@@ -177,6 +178,8 @@ public class GestoreQueryCerca {
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setInt(1,id);
         ResultSet resultSet = preparedStatement.executeQuery();
+
+        if (!resultSet.isBeforeFirst()) throw new SQLException();
 
         while (resultSet.next()) setPartecipanti.add(resultSet.getString(1));
 
