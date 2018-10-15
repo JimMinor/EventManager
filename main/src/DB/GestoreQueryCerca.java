@@ -365,7 +365,7 @@ public class GestoreQueryCerca {
 
     public List<Addetto> eseguiQueryRicercaAddetto(String nome, String cognome, LocalDate datanascita) throws SQLException {
 
-        List<Addetto> listaAddetto = new ArrayList<>();
+        List<Addetto> listaAddetti = new ArrayList<>();
         ResultSet resultSet = null;
         String selectSql = null;
         String queryWhere = null;
@@ -456,13 +456,13 @@ public class GestoreQueryCerca {
 
             Addetto rigaAddetto = new Addetto(nome1, cognome1, dataNascita, CF, dataAssunzione, stipendio, telefono, iban, email, id);
 
-            listaAddetto.add(rigaAddetto);
+            listaAddetti.add(rigaAddetto);
         }
         resultSet.close();
         preparedStatement.close();
         connection.close();
 
-        return listaAddetto;
+        return listaAddetti;
 
 
     }

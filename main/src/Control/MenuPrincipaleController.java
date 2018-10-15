@@ -41,10 +41,8 @@ public class MenuPrincipaleController {
                 risorseForm.put("creaEvento","../FXMLView/inserisciEventoPane.fxml");
                 risorseForm.put("tipoEvento","../FXMLView/tipoEventoPane.fxml");
                 risorseForm.put("gestioneClienti", "../FXMLView/cercaClientPane.fxml");
-                risorseForm.put("gestioneDipedenti", "../FXMLView/cercaDipendentiPane.fxml");
                 risorseForm.put("cercaEvento", "../FXMLView/cercaEventoPane.fxml");
                 risorseForm.put("visualizzaDatiClienti", "../FXMLView/visualizzaClientiPane.fxml");
-                risorseForm.put("nuovoDipendente", "../FXMLView/inserisciDipendentePane.fxml");
                 risorseForm.put("visualizzaEvento","../FXMLView/VisualizzaEventoPane.fxml");
                 risorseForm.put("statistiche","../FXMLView/StatisicheBigliettiPane.fxml");
                 risorseForm.put("cercaAddetti", "../FXMLView/cercaAddettiPane.fxml");
@@ -219,16 +217,6 @@ public class MenuPrincipaleController {
             }
     }
 
-    public void mostraFormNuovoDipendente() {
-        try {
-            FXMLLoader loader = caricaFormDaRisorsa("nuovoDipendente");
-            Node form = loader.load();
-            formCorrente.getChildren().add(form);
-        } catch (Exception e) {
-            e.printStackTrace();
-
-        }
-    }
 
     public void mostraStaticheMenu() {
         try {
