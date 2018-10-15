@@ -35,7 +35,7 @@ public class StatisticheController {
                             public void run() {
                                 try {
                                      String artista = viewStat.getNomePartecipanteTextField().getText();
-
+                                    viewStat.getNomePartecipanteTextField().setText("");
                                      if( !artista.equals("")) {
 
                                          List<Evento> listeventi = eventoDAO.cercaEvento(artista);
@@ -43,7 +43,9 @@ public class StatisticheController {
                                          modelStat.setMapBiglietti(creaMappaBiglietti(listeventi));
                                          modelStat.setMapEventiCitta(eventoDAO.cercaEventiPerCitta(artista));
                                          modelStat.notifyView();
+
                                          }
+
                                          else MostraAlert.mostraAlertErroreInserimentoDati("Inserisci un Artista/Squadra/Atleta presente nel database");
                                      }
                                      else MostraAlert.mostraAlertErroreInserimentoDati("Inserisci una Artista/Squadra/Atleta");
@@ -52,7 +54,9 @@ public class StatisticheController {
 
                             }
                         }
-                ));
+                )
+                     );
+
     }
 
     private Map<String,Integer> creaMappaBiglietti(List<Evento> listeventi) {

@@ -21,11 +21,11 @@
                 <Image url="@../ticket-icon-300x300.png" />
             </image>
         </ImageView>
-      <JFXPasswordField fx:id="passwordTextField" focusColor="#3eb3da" labelFloat="true" layoutX="62.0" layoutY="211.0" prefHeight="25.0" prefWidth="244.0" promptText="Password">
+      <JFXPasswordField fx:id="passwordTextField" focusColor="#3eb3da" labelFloat="true" layoutX="62.0" layoutY="211.0" prefHeight="25.0" prefWidth="244.0" promptText="Password" unFocusColor="BLACK">
          <font>
             <Font size="15.0" />
          </font></JFXPasswordField>
-      <JFXTextField fx:id="usernameTextField" focusColor="#3eb3da" labelFloat="true" layoutX="62.0" layoutY="145.0" prefHeight="25.0" prefWidth="244.0" promptText="Username">
+      <JFXTextField fx:id="usernameTextField" focusColor="#3eb3da" labelFloat="true" layoutX="62.0" layoutY="145.0" prefHeight="25.0" prefWidth="244.0" promptText="Username" unFocusColor="BLACK">
          <font>
             <Font size="15.0" />
          </font></JFXTextField>

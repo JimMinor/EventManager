@@ -8,20 +8,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="cercaDipendentiScreenAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="cercaDipendentiScreenAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <JFXButton fx:id="cercaCercaDipendenteButton" layoutX="727.0" layoutY="84.0" mnemonicParsing="false" onAction="#cercaCercaDipendenteButton" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #8cd742;" text="Cerca" textFill="WHITE" />
-        <JFXTextField fx:id="nomeCercaDipendenteTextField" layoutX="49.0" layoutY="30.0" promptText="Nome">
+        <JFXTextField fx:id="nomeCercaDipendenteTextField" focusColor="#3eb3da" layoutX="49.0" layoutY="30.0" promptText="Nome" unFocusColor="#00000099">
             <font>
                 <Font size="15.0" />
             </font>
         </JFXTextField>
-        <JFXTextField fx:id="cognomeCercaDipendenteTextField" layoutX="346.0" layoutY="26.0" promptText="Cognome">
+        <JFXTextField fx:id="cognomeCercaDipendenteTextField" focusColor="#3eb3da" layoutX="346.0" layoutY="26.0" promptText="Cognome" unFocusColor="#00000099">
             <font>
                 <Font size="15.0" />
             </font>
         </JFXTextField>
-        <JFXDatePicker fx:id="dataNascitaCercaDipendenteDataPicker" layoutX="632.0" layoutY="26.0" prefHeight="39.0" prefWidth="190.0" promptText="Data Nascita" />
+        <JFXDatePicker fx:id="dataNascitaCercaDipendenteDataPicker" defaultColor="#3eb3da" layoutX="632.0" layoutY="22.0" prefHeight="39.0" prefWidth="190.0" promptText="Data Nascita" />
         <JFXButton fx:id="annullaCercaDipendenteButton" layoutX="23.0" layoutY="84.0" mnemonicParsing="false" onAction="#annullaCercaDipendenteButtonPressed" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #e23636#d74242;" text="Annulla" textFill="WHITE" />
           <TableView fx:id="tabellaCercaDipendenteTableView" editable="true" layoutX="23.0" layoutY="123.0" prefHeight="200.0" prefWidth="814.0">
               <columns>

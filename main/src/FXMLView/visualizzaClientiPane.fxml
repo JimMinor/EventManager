@@ -10,16 +10,16 @@
 <AnchorPane id="AnchorPane" fx:id="visualizzaClientiForm" prefHeight="391.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <Label layoutX="410.0" layoutY="14.0" text="Dati Cliente" />
-        <JFXTextField fx:id="usernameClienteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="34.0" layoutY="225.0" prefHeight="25.0" prefWidth="170.0" promptText="Username" unFocusColor="BLACK" />
-        <JFXTextField fx:id="nomeClienteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="34.0" layoutY="59.0" prefHeight="25.0" prefWidth="170.0" promptText="Nome" unFocusColor="BLACK" />
-        <JFXTextField fx:id="cognomeClienteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="34.0" layoutY="121.0" prefHeight="25.0" prefWidth="170.0" promptText="Cognome" unFocusColor="BLACK" />
-        <JFXTextField fx:id="codFiscaleClienteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="34.0" layoutY="173.0" prefHeight="25.0" prefWidth="170.0" promptText="CF" unFocusColor="BLACK" />
-        <JFXTextField fx:id="spesaCartaClienteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="271.0" layoutY="173.0" prefHeight="25.0" prefWidth="170.0" promptText="Spesa con Carta" unFocusColor="BLACK" />
-        <JFXTextField fx:id="emailClienteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="271.0" layoutY="225.0" prefHeight="25.0" prefWidth="170.0" promptText="email" unFocusColor="BLACK" />
+        <JFXTextField fx:id="usernameClienteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="34.0" layoutY="225.0" prefHeight="25.0" prefWidth="170.0" promptText="Username" unFocusColor="#00000099" />
+        <JFXTextField fx:id="nomeClienteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="34.0" layoutY="59.0" prefHeight="25.0" prefWidth="170.0" promptText="Nome" unFocusColor="#00000099" />
+        <JFXTextField fx:id="cognomeClienteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="34.0" layoutY="121.0" prefHeight="25.0" prefWidth="170.0" promptText="Cognome" unFocusColor="#00000099" />
+        <JFXTextField fx:id="codFiscaleClienteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="34.0" layoutY="173.0" prefHeight="25.0" prefWidth="170.0" promptText="CF" unFocusColor="#00000099" />
+        <JFXTextField fx:id="spesaCartaClienteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="271.0" layoutY="173.0" prefHeight="25.0" prefWidth="170.0" promptText="Spesa con Carta" unFocusColor="#00000099" />
+        <JFXTextField fx:id="emailClienteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="271.0" layoutY="225.0" prefHeight="25.0" prefWidth="170.0" promptText="email" unFocusColor="#00000099" />
         <JFXButton fx:id="indietroClientiButton" layoutX="705.0" layoutY="352.0" prefHeight="25.0" prefWidth="135.0" style="-fx-background-color: #8cd742;" text="OK" textFill="WHITE" />
-        <JFXTextField fx:id="bigliettiAcquistatiTextField" focusColor="#3eb3da" labelFloat="true" layoutX="271.0" layoutY="59.0" prefHeight="25.0" prefWidth="170.0" promptText="Biglietti Acquistati" unFocusColor="BLACK" />
-      <JFXTextField fx:id="spesaTotaleClienteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="271.0" layoutY="121.0" prefHeight="25.0" prefWidth="170.0" promptText="Spesa Totale" unFocusColor="BLACK" />
-      <JFXTextField fx:id="passwordClienteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="34.0" layoutY="281.0" prefHeight="25.0" prefWidth="170.0" promptText="Password" text="*********" unFocusColor="BLACK" />
+        <JFXTextField fx:id="bigliettiAcquistatiTextField" focusColor="#3eb3da" labelFloat="true" layoutX="271.0" layoutY="59.0" prefHeight="25.0" prefWidth="170.0" promptText="Biglietti Acquistati" unFocusColor="#00000099" />
+      <JFXTextField fx:id="spesaTotaleClienteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="271.0" layoutY="121.0" prefHeight="25.0" prefWidth="170.0" promptText="Spesa Totale" unFocusColor="#00000099" />
+      <JFXTextField fx:id="passwordClienteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="34.0" layoutY="281.0" prefHeight="25.0" prefWidth="170.0" promptText="Password" text="*********" unFocusColor="#00000099" />
       <JFXDatePicker fx:id="dataNascitaClienteDataPicker" defaultColor="#3eb3da" layoutX="271.0" layoutY="277.0" prefHeight="34.0" prefWidth="170.0" promptText="Data Nascita" />
       <PieChart fx:id="pieChart" layoutX="497.0" layoutY="32.0" prefHeight="249.0" prefWidth="343.0" />
     </children>

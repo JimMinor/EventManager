@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="407.0" prefWidth="879.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="407.0" prefWidth="879.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <SplitPane dividerPositions="0.29364161849710985" layoutX="7.0" layoutY="58.0" prefHeight="339.0" prefWidth="867.0">
         <items>
@@ -35,7 +35,7 @@
         </items>
       </SplitPane>
 
-      <JFXTextField fx:id="nomePartecipanteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="40.0" layoutY="23.0" prefHeight="25.0" prefWidth="134.0" promptText="Artista/Squadra/Atleta" unFocusColor="#3eb3da" />
+      <JFXTextField fx:id="nomePartecipanteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="40.0" layoutY="23.0" prefHeight="25.0" prefWidth="134.0" promptText="Artista/Squadra/Atleta" unFocusColor="#00000099" />
        <JFXButton fx:id="cercaButton" layoutX="195.0" layoutY="22.0" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #8cd742;" text="Cerca" textFill="WHITE" />
       <Label layoutX="331.0" layoutY="26.0" text="Inserire nome di un Artista/Squadra/Atleta per visualizzare le statistiche">
          <font>

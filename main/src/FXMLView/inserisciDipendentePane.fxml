@@ -9,20 +9,20 @@
 
 <AnchorPane fx:id="formInserisciDipedente" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="409.0" prefWidth="726.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.InserisciDipedenteControllerView">
    <children>
-      <JFXTextField fx:id="nomeDipendenteTextField" focusColor="#3eb3da" layoutX="42.0" layoutY="30.0" promptText="Nome" />
-      <JFXTextField fx:id="cognomeDipendenteTextField" layoutX="42.0" layoutY="82.0" promptText="Cognome" />
-      <JFXDatePicker fx:id="dataNascitaDipendenteDatePicker" defaultColor="#3eb3da" layoutX="42.0" layoutY="142.0" promptText="Data di Nascita" />
-      <JFXTextField fx:id="codFiscaleDipendenteTextField" layoutX="42.0" layoutY="192.0" promptText="Codice Fiscale" />
-      <JFXTextField fx:id="indirizzoDipendenteTextField" layoutX="42.0" layoutY="349.0" prefHeight="25.0" prefWidth="210.0" promptText="Indirizzo" visible="false" />
-      <JFXTextField fx:id="telefonoDipendenteTextField" layoutX="349.0" layoutY="30.0" prefHeight="25.0" prefWidth="135.0" promptText="Telefono" />
-      <JFXTextField fx:id="emailDipendenteTextField" layoutX="350.0" layoutY="82.0" prefHeight="25.0" prefWidth="171.0" promptText="e-mail" />
-      <JFXTextField fx:id="ibanDipendenteTextField" layoutX="348.0" layoutY="142.0" prefHeight="25.0" prefWidth="210.0" promptText="IBAN" />
-      <JFXComboBox fx:id="mansioneDipendenteComboBox" focusColor="#3eb3da" layoutX="350.0" layoutY="205.0" prefHeight="25.0" prefWidth="147.0" promptText="Mansione" />
-      <JFXTextField fx:id="stipendioDipendenteTextField" layoutX="531.0" layoutY="205.0" prefHeight="25.0" prefWidth="96.0" promptText="Stipendio" />
+      <JFXTextField fx:id="nomeDipendenteTextField" focusColor="#3eb3da" layoutX="42.0" layoutY="30.0" promptText="Nome" unFocusColor="#00000099" />
+      <JFXTextField fx:id="cognomeDipendenteTextField" focusColor="#3eb3da" layoutX="42.0" layoutY="82.0" promptText="Cognome" unFocusColor="#00000099" />
+      <JFXDatePicker fx:id="dataNascitaDipendenteDatePicker" defaultColor="#3eb3da" layoutX="42.0" layoutY="142.0" overLay="true" promptText="Data di Nascita" />
+      <JFXTextField fx:id="codFiscaleDipendenteTextField" focusColor="#3eb3da" layoutX="42.0" layoutY="192.0" promptText="Codice Fiscale" unFocusColor="#00000099" />
+      <JFXTextField fx:id="indirizzoDipendenteTextField" focusColor="#3eb3da" layoutX="42.0" layoutY="349.0" prefHeight="25.0" prefWidth="210.0" promptText="Indirizzo" unFocusColor="#00000099" visible="false" />
+      <JFXTextField fx:id="telefonoDipendenteTextField" focusColor="#3eb3da" layoutX="349.0" layoutY="30.0" prefHeight="25.0" prefWidth="135.0" promptText="Telefono" unFocusColor="#00000099" />
+      <JFXTextField fx:id="emailDipendenteTextField" focusColor="#3eb3da" layoutX="350.0" layoutY="82.0" prefHeight="25.0" prefWidth="171.0" promptText="e-mail" unFocusColor="#00000099" />
+      <JFXTextField fx:id="ibanDipendenteTextField" focusColor="#3eb3da" layoutX="348.0" layoutY="142.0" prefHeight="25.0" prefWidth="210.0" promptText="IBAN" unFocusColor="#00000099" />
+      <JFXComboBox fx:id="mansioneDipendenteComboBox" focusColor="#3eb3da" layoutX="350.0" layoutY="205.0" prefHeight="25.0" prefWidth="147.0" promptText="Mansione" unFocusColor="#00000099" />
+      <JFXTextField fx:id="stipendioDipendenteTextField" focusColor="#3eb3da" layoutX="531.0" layoutY="205.0" prefHeight="25.0" prefWidth="96.0" promptText="Stipendio" unFocusColor="#00000099" />
       <JFXButton fx:id="annullaDipendenteButton" layoutX="389.0" layoutY="349.0" prefHeight="25.0" prefWidth="93.0" style="-fx-background-color: #e23636#d74242;" text="Annulla" textFill="WHITE" />
       <JFXButton fx:id="inserisciDipendenteButton" layoutX="572.0" layoutY="349.0" onAction="#inserisciDipendenteButtonPressed" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #8cd742;" text="Inserisci" textFill="WHITE" />
-      <JFXTextField fx:id="usernameDipendenteTextField" layoutX="349.0" layoutY="266.0" promptText="Username" />
-      <JFXPasswordField fx:id="passwordDipendentePasswordField" layoutX="531.0" layoutY="266.0" promptText="Password" />
+      <JFXTextField fx:id="usernameDipendenteTextField" focusColor="#3eb3da" layoutX="349.0" layoutY="266.0" promptText="Username" unFocusColor="#00000099" />
+      <JFXPasswordField fx:id="passwordDipendentePasswordField" focusColor="#3eb3da" layoutX="531.0" layoutY="266.0" promptText="Password" unFocusColor="#00000099" />
 
    </children>
 </AnchorPane>
