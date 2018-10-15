@@ -24,7 +24,7 @@ public class InserisciAddettoController {
     public InserisciAddettoController(InserisciAddettoView inserisciAddettoView, MenuPrincipaleController menuPrincipaleController) {
         this.inserisciAddettoView = inserisciAddettoView;
         this.menuPrincipaleController = menuPrincipaleController;
-        this.addettoDAO = new AddettoDAOImp();
+        //this.addettoDAO = new AddettoDAOImp();
         setListenerInserisciAddettoView();
     }
 
@@ -65,8 +65,6 @@ public class InserisciAddettoController {
                     }
                 }));
     }
-
-
 
     private void setListenerCFTextField() {
 

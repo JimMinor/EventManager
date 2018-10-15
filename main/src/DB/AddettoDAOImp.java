@@ -12,7 +12,6 @@ import java.util.List;
 public class AddettoDAOImp implements AddettoDAO {
 
     private Addetto addettoDaInserire;
-    private char mansioneDaInserire;
     private GestoreQueryCerca gestoreQueryCerca;
     private GestoreQueryModificaElimina gestoreQueryModificaElimina;
 
