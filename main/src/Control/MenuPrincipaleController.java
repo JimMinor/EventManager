@@ -18,7 +18,6 @@ import java.util.Map;
 public class MenuPrincipaleController {
 
     private Map<String,String> risorseForm;
-    private Map<TipologiaEnum,String> eventiSpecificiFormMap; // EnumMap
     private MenuPrincipaleView menuPrincipaleView;
     private AnchorPane formCorrente;
 
