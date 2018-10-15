@@ -19,7 +19,7 @@
       </LineChart>
       <JFXButton fx:id="mensiliButton" layoutX="597.0" layoutY="37.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #8cd742;" text="Mensili" />
       <JFXButton fx:id="annualeButton" layoutX="716.0" layoutY="37.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #8cd742;" text="Aannuali" />
-      <JFXComboBox fx:id="luogoComboBox" layoutX="102.0" layoutY="24.0" prefWidth="150.0" promptText="Citta" />
-      <JFXComboBox fx:id="annoComboBox" layoutX="368.0" layoutY="24.0" prefWidth="150.0" promptText="Anno" />
+      <JFXComboBox fx:id="luogoComboBox" layoutX="102.0" layoutY="24.0" prefWidth="150.0" promptText="Citta" unFocusColor="#00000099" />
+      <JFXComboBox fx:id="annoComboBox" layoutX="368.0" layoutY="24.0" prefWidth="150.0" promptText="Anno" unFocusColor="#00000099" />
    </children>
 </AnchorPane>

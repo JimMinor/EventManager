@@ -27,6 +27,10 @@ public class StatisticheView implements Observer {
         statisticheModel.addObserver(this);
     }
 
+    public void setNomePartecipanteTextField(JFXTextField nomePartecipanteTextField) {
+        this.nomePartecipanteTextField = nomePartecipanteTextField;
+    }
+
     public JFXTextField getNomePartecipanteTextField() {
         return nomePartecipanteTextField;
     }
@@ -81,6 +85,7 @@ public class StatisticheView implements Observer {
         pieChart.setData(dataPieChart);
         pieChart.setTitle("Numero di Eventi per Citta:"+" " + nomePartecipanteTextField.getText());
     }
+
 
 
 }

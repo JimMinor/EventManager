@@ -9,10 +9,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="854.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
     <children>
           <JFXButton fx:id="cercaEventoButton" layoutX="721.0" layoutY="70.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: #3eb3da;" text="Cerca" textFill="WHITE" />
-          <JFXTextField fx:id="nomeCercaEventoTextField" focusColor="#3eb3da" labelFloat="true" layoutX="45.0" layoutY="11.0" prefHeight="25.0" prefWidth="169.0" promptText="Nome" unFocusColor="#3eb3da">
+          <JFXTextField fx:id="nomeCercaEventoTextField" focusColor="#3eb3da" labelFloat="true" layoutX="45.0" layoutY="11.0" prefHeight="25.0" prefWidth="169.0" promptText="Nome" unFocusColor="#00000099">
               <font>
                   <Font size="15.0" />
               </font>
@@ -28,7 +28,7 @@
                     <TableColumn fx:id="colonnaDataEvento" prefWidth="245.0" text="Data " />
                 </columns>
             </TableView>
-      <JFXComboBox fx:id="luogoEventoComboBox" focusColor="#3eb3da" labelFloat="true" layoutX="362.0" layoutY="14.0" prefHeight="31.0" prefWidth="135.0" promptText="Luogo Evento" unFocusColor="#3eb3da" />
+      <JFXComboBox fx:id="luogoEventoComboBox" focusColor="#3eb3da" labelFloat="true" layoutX="362.0" layoutY="14.0" prefHeight="31.0" prefWidth="135.0" promptText="Luogo Evento" unFocusColor="#00000099" />
       <JFXButton fx:id="okButton" disable="true" layoutX="607.0" layoutY="70.0" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #8cd742;" text="OK" textFill="WHITE" wrapText="true" />
       <JFXButton fx:id="visualizzaDatiEventoButton" layoutX="540.0" layoutY="326.0" prefHeight="25.0" prefWidth="143.0" style="-fx-background-color: #8cd742;" text="Visualizza Dati Evento" textFill="WHITE" />
     </children>
