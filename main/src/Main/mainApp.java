@@ -28,11 +28,6 @@ public class mainApp extends Application {
 
         this.stagePrincipale = stagePrincipale;
         cambiaStagePrincipale = new CambiaStage(this);
-        /* TEST - BEGIN
-        Impiegato i = new Impiegato();
-        i.setAmministratore("Amministratore");
-        i.setUsername("JimMinor");
-         TEST - END*/
         cambiaStagePrincipale.mostraStageLogin();
         stagePrincipale.show();
     }
