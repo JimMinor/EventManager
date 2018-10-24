@@ -37,16 +37,16 @@ public class MenuPrincipaleController {
             @Override
             public void run() {
 
-                risorseForm.put("creaEvento","../FXMLView/inserisciEventoPane.fxml");
-                risorseForm.put("tipoEvento","../FXMLView/tipoEventoPane.fxml");
-                risorseForm.put("gestioneClienti", "../FXMLView/cercaClientPane.fxml");
-                risorseForm.put("cercaEvento", "../FXMLView/cercaEventoPane.fxml");
-                risorseForm.put("visualizzaDatiClienti", "../FXMLView/visualizzaClientiPane.fxml");
-                risorseForm.put("visualizzaEvento","../FXMLView/VisualizzaEventoPane.fxml");
-                risorseForm.put("statistiche","../FXMLView/StatisicheBigliettiPane.fxml");
-                risorseForm.put("cercaAddetti", "../FXMLView/cercaAddettiPane.fxml");
-                risorseForm.put("visualizzaAddetto","../FXMLView/visualizzaAddettoPane.fxml");
-                risorseForm.put("inserisciAddetto","../FXMLView/inserisciAddettoPane.fxml");
+                risorseForm.put("creaEvento","/FXMLView/inserisciEventoPane.fxml");
+                risorseForm.put("tipoEvento","/FXMLView/tipoEventoPane.fxml");
+                risorseForm.put("gestioneClienti", "/FXMLView/cercaClientPane.fxml");
+                risorseForm.put("cercaEvento", "/FXMLView/cercaEventoPane.fxml");
+                risorseForm.put("visualizzaDatiClienti", "/FXMLView/visualizzaClientiPane.fxml");
+                risorseForm.put("visualizzaEvento","/FXMLView/VisualizzaEventoPane.fxml");
+                risorseForm.put("statistiche","/FXMLView/StatisicheBigliettiPane.fxml");
+                risorseForm.put("cercaAddetti", "/FXMLView/cercaAddettiPane.fxml");
+                risorseForm.put("visualizzaAddetto","/FXMLView/visualizzaAddettoPane.fxml");
+                risorseForm.put("inserisciAddetto","/FXMLView/inserisciAddettoPane.fxml");
 
 
             }

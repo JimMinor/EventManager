@@ -21,8 +21,8 @@ public class CambiaStage {
 
     public CambiaStage(mainApp myApp) {
         screens=new HashMap<>();
-        screens.put("menuPrincipale","../FXMLView/menuPrincipaleScreen.fxml");
-        screens.put("login","../FXMLView/loginScreen.fxml");
+        screens.put("menuPrincipale","/FXMLView/menuPrincipaleScreen.fxml");
+        screens.put("login","/FXMLView/loginScreen.fxml");
 
         this.myApp = myApp;
     }
@@ -44,7 +44,7 @@ public class CambiaStage {
             if (scene != null) {
                 myApp.getStagePrincipale().setResizable(false);
                 myApp.getStagePrincipale().setTitle("Login");
-                myApp.getStagePrincipale().getIcons().add(new Image(getClass().getResourceAsStream("../icons/icons8-ticket-64.png")));
+                myApp.getStagePrincipale().getIcons().add(new Image(getClass().getResourceAsStream("/icons/icons8-ticket-64.png")));
                 setScene(scene);
             } else throw new Exception(); //necessaria?
         } catch (Exception e) {
@@ -64,7 +64,7 @@ public class CambiaStage {
             if (scene != null) {
                 myApp.getStagePrincipale().setResizable(false);
                 myApp.getStagePrincipale().setTitle("Menu Principale");
-                myApp.getStagePrincipale().getIcons().add(new Image(getClass().getResourceAsStream("../icons/icons8-ticket-64.png")));
+                myApp.getStagePrincipale().getIcons().add(new Image(getClass().getResourceAsStream("/icons/icons8-ticket-64.png")));
                 setScene(scene);
             } else throw new Exception(); //necessaria?
         } catch (Exception e) {
