@@ -16,9 +16,9 @@
 
     <children>
       <JFXBadge layoutX="50.0" layoutY="45.0" prefHeight="35.0" prefWidth="56.0" />
-        <ImageView fitHeight="124.0" fitWidth="122.0" layoutX="134.0" layoutY="7.0" opacity="0.34" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="124.0" fitWidth="122.0" layoutX="145.0" layoutY="5.0" opacity="0.34" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../ticket-icon-300x300.png" />
+                <Image url="/icons/ticket-icon-300x300.png" />
             </image>
         </ImageView>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />

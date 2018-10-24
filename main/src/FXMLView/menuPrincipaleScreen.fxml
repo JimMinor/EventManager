@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Point3D?>
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -8,10 +9,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="1189.0" style="-fx-background-color: #fffffc;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MenuPrincipaleView">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="568.0" prefWidth="1189.0" style="-fx-background-color: #fffffc;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MenuPrincipaleView">
 
    <children>
-      <AnchorPane prefHeight="60.0" prefWidth="1189.0" style="-fx-background-color: #3eb3da; -fx-border-color: #99ccff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <AnchorPane prefHeight="60.0" prefWidth="1189.0" style="-fx-background-color: #3eb3da; -fx-border-color: #99ccff;" AnchorPane.bottomAnchor="508.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label layoutX="22.0" layoutY="22.0" prefHeight="17.0" prefWidth="91.0" text="Connesso come" textFill="WHITE">
                <font>
@@ -24,10 +25,13 @@
                </font>
             </Label>
          </children></AnchorPane>
-      <AnchorPane layoutX="-3.0" layoutY="518.0" prefHeight="30.0" prefWidth="1195.0" style="-fx-background-color: #3eb3da; -fx-border-color: #99ccff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="-3.0" />
+      <AnchorPane layoutY="539.0" prefHeight="30.0" prefWidth="1189.0" rotate="8.4" style="-fx-background-color: #3eb3da; -fx-border-color: #99ccff;" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="539.0">
+         <rotationAxis>
+            <Point3D />
+         </rotationAxis></AnchorPane>
       <AnchorPane layoutY="59.0" prefHeight="450.0" prefWidth="230.0">
          <children>
-            <AnchorPane fx:id="cambiaFormMenuPrincipale" accessibleRole="PARENT" layoutX="273.0" layoutY="22.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="407.0" prefWidth="879.0" style="-fx-border-color: #3eb3da;" AnchorPane.leftAnchor="273.0" AnchorPane.rightAnchor="37.0" />
+            <AnchorPane fx:id="cambiaFormMenuPrincipale" accessibleRole="PARENT" layoutX="284.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="879.0" style="-fx-border-color: #3eb3da;" AnchorPane.leftAnchor="284.0" AnchorPane.rightAnchor="26.0" />
             <JFXButton fx:id="inserisciEventiButton" accessibleRole="PARENT" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="25.0" layoutY="55.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="197.0" style="-fx-background-color: #3f78da;" text="Inserisci Evento" textFill="WHITE" AnchorPane.leftAnchor="25.0" />
             <JFXButton fx:id="cercaEventoButton" accessibleRole="PARENT" alignment="CENTER" buttonType="RAISED" layoutX="25.0" layoutY="119.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="50.0" prefWidth="197.0" ripplerFill="WHITE" style="-fx-background-color: #3fd9a5;" text="Cerca Evento" textAlignment="CENTER" textFill="WHITE" />
             <ImageView accessibleRole="PARENT" fitHeight="30.0" fitWidth="30.0" layoutX="35.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
