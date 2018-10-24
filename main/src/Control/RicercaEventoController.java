@@ -80,7 +80,14 @@ public class RicercaEventoController {
                 cambiaModalita(true);
                 Evento eventoSelezionato = cercaEventoView.getTabellaCercaEventoTableView().getSelectionModel()
                         .getSelectedItem();
-                visualizzaEventiModel.setEventoSelezionato(eventoSelezionato);
+                if (eventoSelezionato != null) {
+                    //cambiaModalita(true);
+                    visualizzaEventiModel.setEventoSelezionato(eventoSelezionato);
+                }
+                else {
+                    cambiaModalita(false);
+                    MostraAlert.mostraAlertErroreInserimentoDati("Nessun evento selezionato.");
+                }
             }
 
         }));
@@ -94,9 +101,14 @@ public class RicercaEventoController {
             public void run(){
 
                 Evento evento =  cercaEventoView.getTabellaCercaEventoTableView().getSelectionModel().getSelectedItem();
-                visualizzaEventiModel.setEventoSelezionato(evento);
-                eliminaEventoSelezionato();
-                visualizzaEventiModel.setEventoSelezionato(new Evento());
+                if (evento != null) {
+
+                    visualizzaEventiModel.setEventoSelezionato(evento);
+                    eliminaEventoSelezionato();
+                    visualizzaEventiModel.setEventoSelezionato(new Evento());
+                }
+                else
+                    MostraAlert.mostraAlertErroreInserimentoDati("Nessun evento selezionato.");
             }
 
         }));
@@ -112,12 +124,12 @@ public class RicercaEventoController {
                         getTabellaCercaEventoTableView().
                         getSelectionModel().
                         getSelectedItem());
-                         if(evento!=null)
-                         {
-                                  visualizzaEventiModel.setEventoSelezionato(evento);
-                                  menuPrincipaleController.mostraFormVisualizzaEvento(visualizzaEventiModel);
+                         if(evento!=null) {
+                             visualizzaEventiModel.setEventoSelezionato(evento);
+                             menuPrincipaleController.mostraFormVisualizzaEvento(visualizzaEventiModel);
                          }
-
+                         else
+                             MostraAlert.mostraAlertErroreInserimentoDati("Nessun evento selezionato.");
             }
         }));
     }

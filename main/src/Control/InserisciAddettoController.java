@@ -44,9 +44,12 @@ public class InserisciAddettoController {
                     @Override
                     public void run() {
                         try {
-                            controllaDatiAddetto();
-                            MostraAlert.mostraAlertImpiegatoInserito();
-                            menuPrincipaleController.mostraFormAddetti();
+                            if (controllaDatiAddetto() == true) {
+                                MostraAlert.mostraAlertImpiegatoInserito();
+                                menuPrincipaleController.mostraFormAddetti();
+                            }
+                            else
+                                MostraAlert.mostraAlertErroreInserimentoDati("È già presente un addetto con il Codice Fiscale inserito.");
                         } catch ( Exception e ) {
                             e.printStackTrace();
                             MostraAlert.mostraAlertErroreInserimentoDati(e.getMessage());
@@ -169,9 +172,9 @@ public class InserisciAddettoController {
         AddettoDAO addettoDAO = new AddettoDAOImp(addetto);
 
 
-        addettoDAO.inserisciAddetto();
-
-
-        return true;
+        if (addettoDAO.inserisciAddetto() == true)
+            return true;
+        else
+            return false;
     }
 }

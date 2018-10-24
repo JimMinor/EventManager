@@ -5,6 +5,7 @@ import DB.ClientiDAO;
 import Model.Cliente;
 import Model.VisualizzaClientiModel;
 import View.CercaClientiView;
+import View.MostraAlert;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
@@ -53,6 +54,8 @@ public class RicercaClienteController {
                         menuPrincipaleController.visualizzaPaneClienti(visualizzaclientiModel);
                     } catch ( Exception e ) { e.printStackTrace(); }
                 }
+                else
+                    MostraAlert.mostraAlertErroreInserimentoDati("Nessun cliente selezionato.");
             }
         }));
     }
@@ -84,10 +87,14 @@ public class RicercaClienteController {
                     public void run() {
                         Cliente clienteSelezionato = (Cliente)cercaClientiView.getTabellaCercaClientiTableView()
                                 .getSelectionModel().getSelectedItem();
-                        visualizzaclientiModel.setClienteSelezionato(clienteSelezionato);
-                        eliminClienteSelezionato(clienteSelezionato);
-                        visualizzaclientiModel.setClienteSelezionato(new Cliente());
-                        cercaCliente("");
+                        if (clienteSelezionato != null) {
+                            visualizzaclientiModel.setClienteSelezionato(clienteSelezionato);
+                            eliminClienteSelezionato(clienteSelezionato);
+                            visualizzaclientiModel.setClienteSelezionato(new Cliente());
+                            cercaCliente("");
+                        }
+                        else
+                            MostraAlert.mostraAlertErroreInserimentoDati("Nessun cliente selezionato.");
                     }
                 })));
     }

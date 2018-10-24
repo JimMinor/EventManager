@@ -9,7 +9,7 @@ import java.util.Set;
 
 public  class GestoreQueryInserimentoEvento {
 
-    private  Evento eventoDaInserire;
+    private Evento eventoDaInserire;
 
     private  int idEventoInserito;
 

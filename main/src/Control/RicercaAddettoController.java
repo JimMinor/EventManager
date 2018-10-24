@@ -66,11 +66,14 @@ public class RicercaAddettoController {
                 ActionEvent.ACTION, event -> Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
-                        Addetto addetto = cercaAddettiView.getTabellaCercaAddettoTableView().
+                        Addetto addettoSelezionato = cercaAddettiView.getTabellaCercaAddettoTableView().
                                 getSelectionModel().getSelectedItem();
-
-                        visualizzaAddettiModel.setAddettoSelezionato(addetto);
-                        eliminaAddettoSelezionato();
+                        if (addettoSelezionato != null) {
+                            visualizzaAddettiModel.setAddettoSelezionato(addettoSelezionato);
+                            eliminaAddettoSelezionato();
+                        }
+                        else
+                            MostraAlert.mostraAlertErroreInserimentoDati("Nessun addetto selezionato.");
                     }
                 })
         );
@@ -99,8 +102,8 @@ public class RicercaAddettoController {
                             visualizzaAddettiModel.setAddettoSelezionato(addettoSelezionato);
                             menuPrincipaleController.mostraFormVisualizzaAddetto(visualizzaAddettiModel);
                         }
-
-
+                        else
+                            MostraAlert.mostraAlertErroreInserimentoDati("Nessun addetto selezionato.");
                     }
                 }));
     }
@@ -116,7 +119,7 @@ public class RicercaAddettoController {
              }
         } catch (Exception e) {
             e.printStackTrace();
-            MostraAlert.mostraAlertErroreInserimentoDati("Non è stato possibile eliminare l'addetto. Riprovare.\"");
+            MostraAlert.mostraAlertErroreInserimentoDati("Non è stato possibile eliminare l'addetto. Riprovare.");
         }
 
     }
