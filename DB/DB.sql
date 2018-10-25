@@ -148,7 +148,17 @@ FROM
 FROM 
     VIEWADDETTI JOIN IMPIEGATO ON IMPIEGATO.ID = VIEWADDETTI.ID
 ;
--------------------------------------------------------
+REM INSERTING into ADMIN.ADDETTO
+SET DEFINE OFF;
+Insert into ADMIN.ADDETTO (ID,CODICE_FISCALE,DATA_ASSUNZIONE,STIPENDIO,EMAIL,TELEFONO,IBAN) values ('43','ABCDEFGHI',to_date('07-SEP-18','DD-MON-RR'),'0','admin@ticket.it','3331234567',null);
+REM INSERTING into ADMIN.IMPIEGATO
+SET DEFINE OFF;
+Insert into ADMIN.IMPIEGATO (ID,USERNAME,PASSWORD,ADMIN) values ('43','admin','admin','V');
+REM INSERTING into ADMIN.PERSONA
+SET DEFINE OFF;
+Insert into ADMIN.PERSONA (CODICE_FISCALE,NOME,COGNOME,DATA_NASCITA) values ('ABCDEFGHI','admin','admin',to_date('07-SEP-18','DD-MON-RR'));
+
+--------------------------------------------------------
 --  DDL for Index CLIENTE_PK
 --------------------------------------------------------
 
