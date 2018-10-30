@@ -1,0 +1,1 @@
+Avviare EventManager.exe nella directory EventManager

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="407.0" prefWidth="879.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.29364161849710985" layoutX="7.0" layoutY="58.0" prefHeight="339.0" prefWidth="867.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="337.0" prefWidth="326.0">
+               <children>
+                  <PieChart fx:id="pieChart" layoutY="17.0" prefHeight="235.0" prefWidth="299.0" title="Numero di Eventi per Citta" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="337.0" prefWidth="402.0">
+               <children>
+                  <BarChart fx:id="barChart" layoutX="29.0" layoutY="27.0" prefHeight="310.0" prefWidth="485.0" title="Biglietti Venduti ">
+                    <xAxis>
+                      <CategoryAxis fx:id="cittaX" animated="false" side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis fx:id="bigliettiY" side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+
+      <JFXTextField fx:id="nomePartecipanteTextField" focusColor="#3eb3da" labelFloat="true" layoutX="40.0" layoutY="23.0" prefHeight="25.0" prefWidth="134.0" promptText="Artista/Squadra/Atleta" unFocusColor="#00000099" />
+       <JFXButton fx:id="cercaButton" layoutX="195.0" layoutY="22.0" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #8cd742;" text="Cerca" textFill="WHITE" />
+      <Label layoutX="331.0" layoutY="26.0" text="Inserire nome di un Artista/Squadra/Atleta per visualizzare le statistiche">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
