@@ -46,6 +46,7 @@ public class MenuPrincipaleView implements Initializable, ControlledStage {
 
 
     public Button getGestioneClientiButton() {
+
         return gestioneClientiButton;
     }
 
@@ -93,5 +94,8 @@ public class MenuPrincipaleView implements Initializable, ControlledStage {
 
         this.utenteConnesso = utenteConnesso;
         utenteConnessoLabel.setText(utenteConnesso.getUsername()+ " - " + utenteConnesso.getAmministratore());
+        if(utenteConnesso.getAmministratore().equals("X")){
+            gestioneClientiButton.setDisable(true);
+        }
     }
 }
